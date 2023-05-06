@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,6 +134,30 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+MESSAGE_TAGS = {
+    messages.INFO: "danger",
+}
+
+# #SMTP configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'developer.nattananphermsin@gmail.com'
+EMAIL_HOST_PASSWORD = 'zwpuceqaawoxhbsj'
+EMAIL_USE_TLS = True
+
+# from flask import Flask
+# from flask_mail import Mail, Message
+
+# app = Flask(__name__)
+# mail= Mail(app)
+#
+# app.config['MAIL_SERVER']='smtp.gmail.com'
+# app.config['MAIL_PORT'] = 465
+# app.config['MAIL_USERNAME'] = 'developer.nattananphermsin@gmail.com'
+# app.config['MAIL_PASSWORD'] = 'nattanan&&##1'
+# app.config['MAIL_USE_TLS'] = False
+# app.config['MAIL_USE_SSL'] = True
+# mail = Mail(app)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
